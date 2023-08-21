@@ -1,5 +1,5 @@
 # Zaya link shortener sdk for Laravel
-using this package you can easily implement the zaya.io link shortener in your laravel application.
+using this package you can easily implement the [Zaya](https://zaya.io) link shortener in your php application.
 ## Installation
 
 You can install the package via composer:
