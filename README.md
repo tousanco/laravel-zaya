@@ -47,7 +47,9 @@ $link = Link::create('https://example.com', $createOrUpdateParams);
 
 $linkId = 1;
 $link = Link::details($linkId);
+
 $link = Link::update($linkId, $createOrUpdateParams);
+
 Link::delete($linkId);
 ```
 ### Space
@@ -66,7 +68,9 @@ $space = Space::create($params);
 
 $spaceId = 1;
 $space = Space::details($spaceId);
+
 $space = Space::update($spaceId, $params);
+
 Space::delete($spaceId);
 ```
 ### Domain
@@ -90,8 +94,10 @@ $domain = Domain::create($params);
 
 $domainId = 1;
 $domain = Domain::details($domainId);
+
 // You cannot update the domain name
 $domain = Domain::update($domainId, $params);
+
 Domain::delete($domainId);
 ```
 ### Stats
@@ -102,12 +108,19 @@ $linkId = 1;
 // The default value is the current day's
 $params = ['from' => 'Y-m-d H:i:s', 'to' => 'Y-m-d H:i:s'];
 $total = Stats::total($linkId, $params);
+
 $clicks = Stats::clicks($linkId, $params);
+
 $referrers = Stats::referrers($linkId, $params);
+
 $countries = Stats::countries($linkId, $params);
+
 $languages = Stats::languages($linkId, $params);
+
 $browsers = Stats::browsers($linkId, $params);
+
 $devices = Stats::devices($linkId, $params);
+
 $operatingSystems = Stats::operatingSystems($linkId, $params);
 ```
 ### Account
