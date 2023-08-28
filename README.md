@@ -27,7 +27,7 @@ $listParams = [
     'favorites' => 'in:1',
     'sort' => 'in:desc,asc,max,min',
 ];
-$links = Link::list($listParams);
+$links = Link::all($listParams);
 
 $createOrUpdateParams = [
     // All options nullable
@@ -61,7 +61,7 @@ $listParams = [
     'search' => 'string',
     'sort' => 'in:desc,asc'
 ];
-$spaces = Space::list($listParams);
+$spaces = Space::all($listParams);
 
 $params = ['name' => 'sample space', 'color' => '#fff'];
 $space = Space::create($params);
@@ -82,7 +82,7 @@ $listParams = [
     'search' => 'string',
     'sort' => 'in:desc,asc'
 ];
-$domains = Domain::list($listParams);
+$domains = Domain::all($listParams);
 
 $params = [
     'name' => 'yourdomain.com',

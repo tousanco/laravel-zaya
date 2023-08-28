@@ -5,7 +5,7 @@ namespace Tousanco\LaravelZaya;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static list(array $params = []): array
+ * @method static all(array $params = []): array
  * @method static create(array $params = []): array
  * @method static details(int $id): array
  * @method static update(int $id, array $params = []): array
