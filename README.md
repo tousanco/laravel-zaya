@@ -153,5 +153,18 @@ use Tousanco\LaravelZaya\Account;
 
 $accountDetails = Account::details();
 ```
+### Timeout
+You can set timeout in two ways:
+- You can set timeout on config file
+- When you call the methods of sending the request
+
+```php
+use Tousanco\LaravelZaya\Link;
+
+$timeout = 5;
+$linkId = 22;
+Link::details($linkId, $timeout);
+```
+
 ## Documentation
 See the [documentation](https://zaya.io/developers) for more details.

@@ -5,7 +5,7 @@ namespace Tousanco\LaravelZaya;
 use Illuminate\Support\Facades\Facade;
 
 /**
- * @method static details(): array
+ * @method static details($timeout = null): array
  *
  * @see \Tousanco\PhpZaya\Account
  */

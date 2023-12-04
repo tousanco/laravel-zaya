@@ -15,33 +15,53 @@ class LaravelZayaServiceProvider extends ServiceProvider
     {
         if ($this->app->runningInConsole()) {
             $this->publishes([
-                __DIR__.'/../config/config.php' => config_path('zaya.php'),
+                __DIR__ . '/../config/config.php' => config_path('zaya.php'),
             ], 'config');
         }
     }
 
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/config.php', 'zaya');
+        $this->mergeConfigFrom(__DIR__ . '/../config/config.php', 'zaya');
 
         $this->app->singleton('zayaLink', function ($app) {
-            return Link::instance(config('zaya.api_key'), config('zaya.base_url'));
+            return Link::instance(
+                config('zaya.api_key'),
+                config('zaya.base_url'),
+                config('zaya.timeout', 5)
+            );
         });
 
         $this->app->singleton('zayaSpace', function () {
-            return Space::instance(config('zaya.api_key'), config('zaya.base_url'));
+            return Space::instance(
+                config('zaya.api_key'),
+                config('zaya.base_url'),
+                config('zaya.timeout', 5)
+            );
         });
 
         $this->app->singleton('zayaDomain', function () {
-            return Domain::instance(config('zaya.api_key'), config('zaya.base_url'));
+            return Domain::instance(
+                config('zaya.api_key'),
+                config('zaya.base_url'),
+                config('zaya.timeout', 5)
+            );
         });
 
         $this->app->singleton('zayaStats', function () {
-            return Stats::instance(config('zaya.api_key'), config('zaya.base_url'));
+            return Stats::instance(
+                config('zaya.api_key'),
+                config('zaya.base_url'),
+                config('zaya.timeout', 5)
+            );
         });
 
         $this->app->singleton('zayaAccount', function () {
-            return Account::instance(config('zaya.api_key'), config('zaya.base_url'));
+            return Account::instance(
+                config('zaya.api_key'),
+                config('zaya.base_url'),
+                config('zaya.timeout', 5)
+            );
         });
     }
 }
